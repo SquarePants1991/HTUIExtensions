@@ -7,40 +7,50 @@
 //
 
 // https://github.com/Specta/Specta
+#import  <HTUIExtensions/UIColor+HTExtension.h>
 
 SpecBegin(InitialSpecs)
 
-describe(@"these will fail", ^{
+describe(@"UIColor Tests", ^{
 
-    it(@"can do maths", ^{
-        expect(1).to.equal(2);
+    it(@"can convert hex argb int", ^{
+        UIColor * color = [UIColor colorWithARGBHex:0xffaabbcc];
+        CGFloat r,g,b,a;
+        [color getRed:&r green:&g blue:&b alpha:&a];
+        expect(r).to.beCloseToWithin(0xa9 / 255.0, 0xab / 255.0);
+        expect(g).to.beCloseToWithin(0xba / 255.0, 0xbc / 255.0);
+        expect(b).to.beCloseToWithin(0xcb / 255.0, 0xcd / 255.0);
+        expect(a).to.equal(1);
     });
 
-    it(@"can read", ^{
-        expect(@"number").to.equal(@"string");
+    it(@"can convert hex rgb int", ^{
+        UIColor * color = [UIColor colorWithRGBHex:0xaabbcc];
+        CGFloat r,g,b,a;
+        [color getRed:&r green:&g blue:&b alpha:&a];
+        expect(r).to.beCloseToWithin(0xa9 / 255.0, 0xab / 255.0);
+        expect(g).to.beCloseToWithin(0xba / 255.0, 0xbc / 255.0);
+        expect(b).to.beCloseToWithin(0xcb / 255.0, 0xcd / 255.0);
+        expect(a).to.equal(1);
     });
-    
-    it(@"will wait for 10 seconds and fail", ^{
-        waitUntil(^(DoneCallback done) {
-        
-        });
-    });
-});
 
-describe(@"these will pass", ^{
-    
-    it(@"can do maths", ^{
-        expect(1).beLessThan(23);
+    it(@"can convert hex argb string", ^{
+        UIColor * color = [UIColor colorWithARGBHexString:@"#ffaabbcc"];
+        CGFloat r,g,b,a;
+        [color getRed:&r green:&g blue:&b alpha:&a];
+        expect(r).to.beCloseToWithin(0xa9 / 255.0, 0xab / 255.0);
+        expect(g).to.beCloseToWithin(0xba / 255.0, 0xbc / 255.0);
+        expect(b).to.beCloseToWithin(0xcb / 255.0, 0xcd / 255.0);
+        expect(a).to.equal(1);
     });
-    
-    it(@"can read", ^{
-        expect(@"team").toNot.contain(@"I");
-    });
-    
-    it(@"will wait and succeed", ^{
-        waitUntil(^(DoneCallback done) {
-            done();
-        });
+
+    it(@"can convert hex rgb string", ^{
+        UIColor * color = [UIColor colorWithRGBHexString:@"#aabbcc"];
+        CGFloat r,g,b,a;
+        [color getRed:&r green:&g blue:&b alpha:&a];
+        expect(r).to.beCloseToWithin(0xa9 / 255.0, 0xab / 255.0);
+        expect(g).to.beCloseToWithin(0xba / 255.0, 0xbc / 255.0);
+        expect(b).to.beCloseToWithin(0xcb / 255.0, 0xcd / 255.0);
+        expect(a).to.equal(1);
     });
 });
 

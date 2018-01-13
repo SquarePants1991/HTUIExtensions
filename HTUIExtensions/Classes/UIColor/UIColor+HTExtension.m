@@ -5,9 +5,9 @@
 //  Created by yang wang on 2018/1/13.
 //
 
-#import "UIColor+Extension.h"
+#import "UIColor+HTExtension.h"
 
-@implementation UIColor (Extension)
+@implementation UIColor (HTExtension)
 + (UIColor *)colorWithARGBHex:(unsigned int)hex {
     CGFloat a = (hex >> 24 & 0xff) / 255.0;
     CGFloat r = (hex >> 16 & 0xff) / 255.0;

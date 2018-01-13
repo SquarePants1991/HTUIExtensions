@@ -21,11 +21,11 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/ocean/HTUIExtensions'
+  s.homepage         = 'https://github.com/SquarePants1991/HTUIExtensions'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'ocean' => 'tomcat1991@126.com' }
-  s.source           = { :git => 'https://github.com/ocean/HTUIExtensions.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/SquarePants1991/HTUIExtensions.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '8.0'

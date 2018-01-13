@@ -7,7 +7,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIColor (Extension)
+@interface UIColor (HTExtension)
 + (UIColor *)colorWithARGBHex:(unsigned int)hex;
 + (UIColor *)colorWithRGBHex:(unsigned int)hex;
 + (UIColor *)colorWithARGBHexString:(NSString *)hex;
